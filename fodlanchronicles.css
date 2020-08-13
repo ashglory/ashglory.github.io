@@ -1,0 +1,380 @@
+.container {
+  width: 75%;
+  font-family: sans-serif;
+  max-height: 250px;
+  font-family: "Bebas Neue", sans-serif;
+}
+
+.title {
+  width: 20%;
+  min-width: 250px;
+  padding: 3vh 0;
+  padding-left: 2vw;
+  border-right: none;
+  float: left;
+  border: 1px solid black;
+  border-right: none;
+  height: 250px;
+}
+
+.black-eagles {
+  background-color: rgb(75,15,5);
+  color: white;
+}
+
+.blue-lions {
+  background-color: rgb(5,30,75);
+  color: white;
+}
+
+.black-eagles {
+  background-color: rgb(255,250,200);
+  color: black;
+}
+
+.church-of-seiros {
+  background-color: rgb(204,255,230);
+  color: black;
+}
+
+.unaffiliated {
+  background-color: rgb(170,170,170);
+  color: black;
+}
+
+/* profile image */
+.imagecontainer {
+  width: 200px;
+  border: 1px solid black;
+}
+
+.imagecontainer img {
+  max-width: 200px;
+}
+
+/* personal details box */
+.details {
+  width: 200px;
+  margin-top: 2vh;
+  font-size: 80%;
+}
+
+.affiliation-icon {
+  font-size: 150%;
+}
+
+.name {
+  font-size: 125%;
+  width: 200px;
+  text-align: center;
+}
+
+.statsblock {
+  float: left;
+  display: inline-block;
+  width: 40%;
+  min-width: 250px;
+  border: 1px solid black;
+  border-left: none;
+  padding: 3vh 0;
+  padding-left: 1vw;
+  height: 250px;
+  font-size: 135%;
+}
+
+.statcharts>table {
+  width: 80%;
+  color: inherit;
+}
+
+td.text {
+width: 25%;
+font-size: 1.1rem;
+}
+
+td.bar {
+  width: 80%;
+}
+
+.barE, .barEplus, .barD, .barDplus, .barC, .barCplus, .barB, .barBplus, .barA, .barAplus, .barS, .barSplus, .barSS {
+ background: rgba(95,85,65,1);
+ border: 1px solid black;
+ border-radius: 0px;
+ height: 2vh;
+ box-sizing: border-box;
+ padding: 0.5px;
+ display: block;
+ color: #000000;
+}
+
+.barE:after {
+ content: " E";
+ display: block;
+ background: rgba(140,250,215,1);
+ border-radius: 0px;
+ height: 100%;
+ width: 0%;
+ color: white;
+ white-space: pre;
+ line-height: 2vh;
+}
+
+.barEplus:after {
+ content: " E+";
+ display: block;
+ background: rgba(140,250,215,1);
+ height: 100%;
+ width: 9%;
+ white-space: pre;
+ line-height: 2vh;
+ border-radius: 0px;
+}
+
+.barD:after {
+ content: " D";
+ display: block;
+ background: rgba(140,250,215,1);
+ height: 100%;
+ width: 18%;
+ white-space: pre;
+ line-height: 2vh;
+ border-radius: 0px;
+}
+
+.barDplus:after {
+ content: " D+";
+ display: block;
+ background: rgba(140,250,215,1);
+ height: 100%;
+ width: 27%;
+ white-space: pre;
+ line-height: 2vh;
+ border-radius: 0px;
+}
+
+.barC:after {
+ content: " C";
+ display: block;
+ background: rgba(140,250,215,1);
+ height: 100%;
+ width: 36%;
+ color: black;
+ white-space: pre;
+ line-height: 2vh;
+ border-radius: 0px;
+}
+
+.barCplus:after {
+ content: " C+";
+ display: block;
+ background: rgba(140,250,215,1);
+ height: 100%;
+ width: 45%;
+ white-space: pre;
+ line-height: 2vh;
+ border-radius: 0px;
+}
+
+.barB:after {
+ content: " B";
+ display: block;
+ background: rgba(140,250,215,1);
+ height: 100%;
+ width: 54%;
+ white-space: pre;
+ line-height: 2vh;
+ border-radius: 0px;
+}
+
+.barBplus:after {
+ content: " B+";
+ display: block;
+ background: rgba(140,250,215,1);
+ height: 100%;
+ width: 63%;
+ white-space: pre;
+ line-height: 2vh;
+ border-radius: 0px;
+}
+
+.barA:after {
+ content: " A";
+ display: block;
+ background: rgba(140,250,215,1);
+ height: 100%;
+ width: 72%;
+ white-space: pre;
+ line-height: 2vh;
+ border-radius: 0px;
+}
+
+.barAplus:after {
+ content: " A+";
+ display: block;
+ background: rgba(140,250,215,1);
+ height: 100%;
+ width: 81%;
+ white-space: pre;
+ line-height: 2vh;
+ border-radius: 0px;
+}
+
+.barS:after {
+ content: " S";
+ display: block;
+ background: rgba(140,250,215,1);
+ height: 100%;
+ width: 90%;
+ white-space: pre;
+ line-height: 2vh;
+ border-radius: 0px;
+}
+
+.barSplus:after {
+ content: " S+";
+ display: block;
+ background: rgba(140,250,215,1);
+ height: 100%;
+ width: 100%;
+ white-space: pre;
+ line-height: 2vh;
+ border-radius: 0px;
+}
+
+.barSS:after {
+ content: " SS";
+ display: block;
+ background: rgba(255,255,150,1);
+ height: 100%;
+ width: 100%;
+ white-space: pre;
+ line-height: 2vh;
+ border-radius: 0px;
+}
+
+.statcharts {
+  height: 200px;
+  width: 100%;
+  margin-top: 4vh;
+  overflow: hidden;
+}
+
+.combatskills {
+  display: grid;
+  max-height: 200px;
+  grid-template-columns: auto auto auto;
+  grid-auto-flow: row;
+  margin-top: 4vh;
+  overflow: hidden;
+}
+
+.academicskills {
+  display: grid;
+  max-height: 200px;
+  grid-template-columns: auto auto auto;
+  grid-auto-flow: row;
+  margin-top: 4vh;
+  overflow: hidden;
+}
+
+.specialistskills {
+  display: grid;
+  max-height: 200px;
+  grid-template-columns: auto auto auto;
+  grid-auto-flow: row;
+  margin-top: 4vh;
+  overflow: hidden;
+}
+
+.tabs {
+  position: relative;
+  min-height: 250px;
+  clear: both;
+}
+
+.tab {
+  float: left;
+}
+
+.tab label {
+  background: white;
+  color: black;
+  padding: 0.5vh 0.5vw;
+  border: 1px solid #CCCCCC;
+  position: relative;
+  font-size: 0.7em;
+  z-index: 1;
+}
+
+[type=radio] {
+  display: none;
+}
+
+.content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 200px;
+  padding-top: 1vh;
+}
+
+[type=radio]:checked ~ label {
+  background: #CCCCCC;
+  border-bottom: 1px solid #CCCCCC;
+  z-index: 2;
+  font-size: 0.7em;
+}
+
+[type=radio]:checked ~ label ~ .content {
+  z-index: 1;
+}
+
+.inventory {
+  margin-top: 4vh;
+  height: 200px;
+  max-height: 200px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.inventory ul {
+  list-style-type: none;
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+  margin-left: -1rem;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip:hover {
+  cursor: pointer;
+}
+
+.tooltip:hover>.tooltiptext {
+  visibility: visible;
+}
+
+.tooltiptext {
+  position: absolute;
+  min-width: 80px;
+  background-color: rgba(0,0,0,0.75);
+  border: 1px solid transparent;
+  border-radius: 10px;
+  text-align: center;
+  color: white;
+  padding: 3px 4px;
+  box-sizing: border-box;
+  font-size: 0.8rem;
+  visibility: hidden;
+  z-index: 2;
+  bottom: 30%;
+}
+
+.inv.tooltiptext {
+  min-width: 200px;
+}
