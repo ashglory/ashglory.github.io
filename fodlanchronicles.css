@@ -1,20 +1,21 @@
 .container {
-  width: 75%;
+  width: 60%;
   font-family: sans-serif;
   max-height: 250px;
   font-family: "Bebas Neue", sans-serif;
 }
 
 .title {
-  width: 20%;
-  min-width: 250px;
-  padding: 3vh 0;
-  padding-left: 2vw;
+  width: 15%;
+  min-width: 180px;
+  padding: 0.5vh 0;
+  padding-left: 0.5vw;
   border-right: none;
+  margin-right: 0;
   float: left;
   border: 1px solid black;
   border-right: none;
-  height: 250px;
+  height: 220px;
 }
 
 .black-eagles {
@@ -27,7 +28,7 @@
   color: white;
 }
 
-.black-eagles {
+.golden-deer {
   background-color: rgb(255,250,200);
   color: black;
 }
@@ -44,17 +45,17 @@
 
 /* profile image */
 .imagecontainer {
-  width: 200px;
+  width: 150px;
   border: 1px solid black;
 }
 
 .imagecontainer img {
-  max-width: 200px;
+  max-width: 150px;
 }
 
 /* personal details box */
 .details {
-  width: 200px;
+  width: 150px;
   margin-top: 2vh;
   font-size: 80%;
 }
@@ -65,7 +66,7 @@
 
 .name {
   font-size: 125%;
-  width: 200px;
+  width: 150px;
   text-align: center;
 }
 
@@ -73,13 +74,17 @@
   float: left;
   display: inline-block;
   width: 40%;
-  min-width: 250px;
+  min-width: 200px;
   border: 1px solid black;
   border-left: none;
-  padding: 3vh 0;
-  padding-left: 1vw;
-  height: 250px;
-  font-size: 135%;
+  padding-top: 1vh;
+  margin-left: 0;
+  height: 220px;
+  z-index: 0;
+}
+
+.statsblock i {
+  font-size: 120%;
 }
 
 .statcharts>table {
@@ -253,42 +258,42 @@ td.bar {
 }
 
 .statcharts {
-  height: 200px;
+  height: 170px;
   width: 100%;
-  margin-top: 4vh;
+  margin-top: 2vh;
   overflow: hidden;
 }
 
 .combatskills {
   display: grid;
-  max-height: 200px;
+  max-height: 170px;
   grid-template-columns: auto auto auto;
   grid-auto-flow: row;
-  margin-top: 4vh;
+  margin-top: 2vh;
   overflow: hidden;
 }
 
 .academicskills {
   display: grid;
-  max-height: 200px;
+  max-height: 170px;
   grid-template-columns: auto auto auto;
   grid-auto-flow: row;
-  margin-top: 4vh;
+  margin-top: 3vh;
   overflow: hidden;
 }
 
 .specialistskills {
   display: grid;
-  max-height: 200px;
+  max-height: 170px;
   grid-template-columns: auto auto auto;
   grid-auto-flow: row;
-  margin-top: 4vh;
+  margin-top: 2vh;
   overflow: hidden;
 }
 
 .tabs {
   position: relative;
-  min-height: 250px;
+  min-height: 200px;
   clear: both;
 }
 
@@ -316,7 +321,7 @@ td.bar {
   left: 0;
   right: 0;
   bottom: 0;
-  height: 200px;
+  height: 170px;
   padding-top: 1vh;
 }
 
@@ -332,16 +337,14 @@ td.bar {
 }
 
 .inventory {
-  margin-top: 4vh;
-  height: 200px;
-  max-height: 200px;
+  margin-top: 2vh;
+  height: 170px;
   overflow-y: auto;
   overflow-x: hidden;
 }
 
 .inventory ul {
   list-style-type: none;
-  font-size: 1.2rem;
   margin-top: 0.5rem;
   margin-left: -1rem;
 }
@@ -376,5 +379,5 @@ td.bar {
 }
 
 .inv.tooltiptext {
-  min-width: 200px;
+  min-width: 210px;
 }
