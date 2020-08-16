@@ -1,15 +1,14 @@
 .container {
-  width: 60%;
+  width: 650px;
   font-family: sans-serif;
   max-height: 250px;
   font-family: "Bebas Neue", sans-serif;
 }
 
 .title {
-  width: 15%;
-  min-width: 180px;
-  padding: 0.5vh 0;
-  padding-left: 0.5vw;
+  width: 120px;
+  min-width: 100px;
+  padding: 0.5vh 0.5vw;
   border-right: none;
   margin-right: 0;
   float: left;
@@ -34,7 +33,7 @@
 }
 
 .church-of-seiros {
-  background-color: rgb(204,255,230);
+  background-color: rgb(130,220,180);
   color: black;
 }
 
@@ -45,17 +44,18 @@
 
 /* profile image */
 .imagecontainer {
-  width: 150px;
+  width: 120px;
   border: 1px solid black;
+  box-sizing: border-box;
 }
 
 .imagecontainer img {
-  max-width: 150px;
+  max-width: 118px;
 }
 
 /* personal details box */
 .details {
-  width: 150px;
+  width: 120px;
   margin-top: 2vh;
   font-size: 80%;
 }
@@ -66,19 +66,19 @@
 
 .name {
   font-size: 125%;
-  width: 150px;
+  width: 120px;
   text-align: center;
 }
 
 .statsblock {
   float: left;
   display: inline-block;
-  width: 40%;
-  min-width: 200px;
+  width: 380px;
   border: 1px solid black;
   border-left: none;
   padding-top: 1vh;
   margin-left: 0;
+  padding-left: 2vw;
   height: 220px;
   z-index: 0;
 }
@@ -257,6 +257,165 @@ td.bar {
  border-radius: 0px;
 }
 
+/* ROUND BARS HERE */
+.barEr, .barEplusr, .barDr, .barDplusr, .barCr, .barCplusr, .barBr, .barBplusr, .barAr, .barAplusr, .barSr, .barSplusr, .barSSr {
+ background: rgba(95,85,65,1);
+ border: 1px solid black;
+ border-radius: 10px;
+ height: 2vh;
+ box-sizing: border-box;
+ padding: 0.5px;
+ display: block;
+ color: #000000;
+}
+
+.barEr:after {
+ content: " E";
+ display: block;
+ background: rgba(140,250,215,1);
+ border-radius: 8px;
+ height: 100%;
+ width: 0%;
+ color: white;
+ white-space: pre;
+ line-height: 2vh;
+}
+
+.barEplusr:after {
+ content: " E+";
+ display: block;
+ background: rgba(140,250,215,1);
+ height: 100%;
+ width: 9%;
+ white-space: pre;
+ line-height: 2vh;
+ border-radius: 8px;
+}
+
+.barDr:after {
+ content: " D";
+ display: block;
+ background: rgba(140,250,215,1);
+ height: 100%;
+ width: 18%;
+ white-space: pre;
+ line-height: 2vh;
+ border-radius: 8px;
+}
+
+.barDplusr:after {
+ content: " D+";
+ display: block;
+ background: rgba(140,250,215,1);
+ height: 100%;
+ width: 27%;
+ white-space: pre;
+ line-height: 2vh;
+ border-radius: 8px;
+}
+
+.barCr:after {
+ content: " C";
+ display: block;
+ background: rgba(140,250,215,1);
+ height: 100%;
+ width: 36%;
+ color: black;
+ white-space: pre;
+ line-height: 2vh;
+ border-radius: 8px;
+}
+
+.barCplusr:after {
+ content: " C+";
+ display: block;
+ background: rgba(140,250,215,1);
+ height: 100%;
+ width: 45%;
+ white-space: pre;
+ line-height: 2vh;
+ border-radius: 8px;
+}
+
+.barBr:after {
+ content: " B";
+ display: block;
+ background: rgba(140,250,215,1);
+ height: 100%;
+ width: 54%;
+ white-space: pre;
+ line-height: 2vh;
+ border-radius: 8px;
+}
+
+.barBplusr:after {
+ content: " B+";
+ display: block;
+ background: rgba(140,250,215,1);
+ height: 100%;
+ width: 63%;
+ white-space: pre;
+ line-height: 2vh;
+ border-radius: 8px;
+}
+
+.barAr:after {
+ content: " A";
+ display: block;
+ background: rgba(140,250,215,1);
+ height: 100%;
+ width: 72%;
+ white-space: pre;
+ line-height: 2vh;
+ border-radius: 8px;
+}
+
+.barAplusr:after {
+ content: " A+";
+ display: block;
+ background: rgba(140,250,215,1);
+ height: 100%;
+ width: 81%;
+ white-space: pre;
+ line-height: 2vh;
+ border-radius: 8px;
+}
+
+.barSr:after {
+ content: " S";
+ display: block;
+ background: rgba(140,250,215,1);
+ height: 100%;
+ width: 90%;
+ white-space: pre;
+ line-height: 2vh;
+ border-radius: 8px;
+}
+
+.barSplusr:after {
+ content: " S+";
+ display: block;
+ background: rgba(140,250,215,1);
+ height: 100%;
+ width: 100%;
+ white-space: pre;
+ line-height: 2vh;
+ border-radius: 8px;
+}
+
+.barSSr:after {
+ content: " SS";
+ display: block;
+ background: rgba(255,255,150,1);
+ height: 100%;
+ width: 100%;
+ white-space: pre;
+ line-height: 2vh;
+ border-radius: 8px;
+}
+
+/* OTHER */
+
 .statcharts {
   height: 170px;
   width: 100%;
@@ -288,7 +447,8 @@ td.bar {
   grid-template-columns: auto auto auto;
   grid-auto-flow: row;
   margin-top: 2vh;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 .tabs {
@@ -365,6 +525,7 @@ td.bar {
 .tooltiptext {
   position: absolute;
   min-width: 80px;
+  max-width: 300px;
   background-color: rgba(0,0,0,0.75);
   border: 1px solid transparent;
   border-radius: 10px;
