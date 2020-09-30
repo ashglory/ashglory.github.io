@@ -88,6 +88,7 @@ function resetBuilder() {
   /* removes classes */
   $(".perksearch").remove();
   $(".primary").remove();
+  $(".special").remove();
   $(".secondary").remove();
   $(".active").remove();
   $(".activePerk").remove();
@@ -105,6 +106,7 @@ function resetBuilder() {
 
   /* hide perk cost text and reset cost to default */
   document.getElementById("perkcost").innerHTML = "";
+  pCost = 200;
   cost1 = 0;
   cost2 = 0;
   cost3 = 0;
@@ -427,24 +429,32 @@ function choosePerk() {
 /* copy perk and update cost */
 function copyPerk() {
 
+  document.querySelector(".activePerk").classList.remove("special");
+
   /* copy perk text */
   document.querySelector(".activePerk").innerHTML = document.querySelector(".active").innerHTML;
 
   /* hide other perk boxes if special perk was selected */
   if (document.querySelector(".active").classList.contains("special")) {
     if (document.getElementById("p1").innerHTML = document.querySelector(".active").innerHTML) {
+      document.getElementById("p1").classList.add("special");
+
       document.getElementById("p2").style.display = "none";
       document.getElementById("p2").innerHTML = "PERK #2";
 
       document.getElementById("p3").style.display = "none";
       document.getElementById("p3").innerHTML = "PERK #3";
     } else if (document.getElementById("p2").innerHTML = document.querySelector(".active").innerHTML) {
+      document.getElementById("p2").classList.add("special");
+
       document.getElementById("p1").style.display = "none";
       document.getElementById("p1").innerHTML = "PERK #1";
 
       document.getElementById("p3").style.display = "none";
       document.getElementById("p3").innerHTML = "PERK #3";
     } else if (document.getElementById("p3").innerHTML = document.querySelector(".active").innerHTML) {
+      document.getElementById("p3").classList.add("special");
+
       document.getElementById("p1").style.display = "none";
       document.getElementById("p1").innerHTML = "PERK #1";
 
@@ -484,10 +494,10 @@ function copyPerk() {
   }
 
   /* update cost */
-  total = pCost + cost1 + cost2 + cost3;
-  if (document.getElementById("p1").innerHTML.charAt(0) === "(" || document.getElementByIf("p2").innerHTML.charAt(0) === "(") {
-    total -= 200;
+  if (document.getElementById("p1").classList.contains("special") || document.getElementById("p2").classList.contains("special") || document.getElementById("p3").classList.contains("special")) {
+    pCost = 0;
   }
+    total = pCost + cost1 + cost2 + cost3;
   document.getElementById("perkcost").innerHTML = "Your " + $("#aType option:selected").text() + " costs " + String(total).bold() + " dirham.";
 }
 
@@ -497,6 +507,7 @@ function clearPerk() {
   if (document.getElementById("p1").classList.contains("activePerk")) {
     document.getElementById("p1").innerHTML = "PERK #1";
     cost1 = 0;
+    document.getElementById("p1").classList.remove("special");
     /* if perk 1 is same as perk 2 and in a passive, remove the surcharge */
     if (document.getElementById("p3").innerHTML === "Stacking Perk Surcharge <br><strong>Cost:</strong> " + cost3 + "dh" && document.getElementById("p1").innerHTML !== document.getElementById("p2").innerHTML) {
       document.getElementById("p3").innerHTML === "PERK #3";
@@ -517,6 +528,7 @@ function clearPerk() {
   } else if (document.getElementById("p2").classList.contains("activePerk")) {
       document.getElementById("p2").innerHTML = "PERK #2";
       cost2 = 0;
+      document.getElementById("p1").classList.remove("special");
       if (document.getElementById("p3").innerHTML === "Stacking Perk Surcharge <br><strong>Cost:</strong> " + cost3 + "dh" && document.getElementById("p1").innerHTML !== p2.innerHTML) {
         document.getElementById("p3".innerHTML = "PERK #3");
         cost3 = 0;
@@ -535,6 +547,7 @@ function clearPerk() {
     } else if (document.getElementById("p3").classList.contains("activePerk")) {
       document.getElementById("p3").innerHTML = "PERK #3";
       cost3 = 0;
+      document.getElementById("p1").classList.remove("special");
       document.getElementById("p3").classList.remove("activePerk");
       document.getElementById("p1").style.display = "block";
       document.getElementById("p2").style.display = "block";
@@ -542,6 +555,7 @@ function clearPerk() {
     }
 
     /* update costs */
+    pCost = 200;
     total = pCost + cost1 + cost2 + cost3;
     document.getElementById("perkcost").innerHTML = "Your " + $("#aType option:selected").text() + " costs " + String(total).bold() + " dirham.";
 }
@@ -564,7 +578,7 @@ var perk1 = { description: "Grant yourself or an ally advantage on SKILL checks 
 var perk2 = { description: "Grant yourself or an ally a damage bonus equal to [SKILL].", cost: "025", isPassive: 1, isCM: 1, offense: 1, defense: 1, support: 1, companion: 1, ac: 0, dc: 0, skillChecks: 0, saves: 0, accuracy: 0, advantage: 0, disadvantage: 0, damage: 1, mitigation: 0, healing: 0, condition: 0, movement: 0, targeting: 0, companion1: 0, death: 0, initiative: 0, isSpecial: 0, secOnly: 0, exception: 0, three: 0, four: 0, half: 0 };
 var perk3 = { description: "Determine one of the following about an enemy creature: current hit points, armor class, ability score of your choice, highest technique rank, resistances, or immunities.", cost: "025", isPassive: 1, isCM: 1, offense: 1, defense: 1, support: 1, companion: 1, ac: 0, dc: 0, skillChecks: 0, saves: 0, accuracy: 0, advantage: 0, disadvantage: 0, damage: 0, mitigation: 0, healing: 0, condition: 0, movement: 0, targeting: 0, companion1: 0, death: 0, initiative: 0, isSpecial: 0, secOnly: 0, exception: 0, three: 0, four: 0, half: 0 };
 var perk4 = { description: "Determine a currently equipped ability of a target.", cost: "025", isPassive: 1, isCM: 1, offense: 1, defense: 1, support: 1, companion: 1, ac: 0, dc: 0, skillChecks: 0, saves: 0, accuracy: 0, advantage: 0, disadvantage: 0, damage: 0, mitigation: 0, healing: 0, condition: 0, movement: 0, targeting: 0, companion1: 0, death: 0, initiative: 0, isSpecial: 0, secOnly: 0, exception: 0, three: 0, four: 0, half: 0 };
-var perk5 = { description: "Grant yourself or an ally a healing bonus equal to [TECHNIQUE PROFICIENCY].", cost: "025", isPassive: 1, isCM: 1, offense: 1, defense: 1, support: 1, companion: 1, ac: 0, dc: 0, skillChecks: 0, saves: 0, accuracy: 0, advantage: 0, disadvantage: 0, damage: 0, mitigation: 0, healing: 1, condition: 0, movement: 0, targeting: 0, companion1: 0, death: 0, initiative: 0, isSpecial: 0, secOnly: 0, exception: 0, three: 0, four: 0, half: 0 };
+var perk5 = { description: "Grant yourself or an ally a healing bonus equal to [TECHNIQUE].", cost: "025", isPassive: 1, isCM: 1, offense: 1, defense: 1, support: 1, companion: 1, ac: 0, dc: 0, skillChecks: 0, saves: 0, accuracy: 0, advantage: 0, disadvantage: 0, damage: 0, mitigation: 0, healing: 1, condition: 0, movement: 0, targeting: 0, companion1: 0, death: 0, initiative: 0, isSpecial: 0, secOnly: 0, exception: 0, three: 0, four: 0, half: 0 };
 var perk6 = { description: "Grant yourself or an ally additional damage mitigation equal to [TECHNIQUE].", cost: "025", isPassive: 1, isCM: 1, offense: 1, defense: 1, support: 1, companion: 1, ac: 0, dc: 0, skillChecks: 0, saves: 0, accuracy: 0, advantage: 0, disadvantage: 0, damage: 0, mitigation: 1, healing: 0, condition: 0, movement: 0, targeting: 0, companion1: 0, death: 0, initiative: 0, isSpecial: 0, secOnly: 0, exception: 0, three: 0, four: 0, half: 0 };
 var perk7 = { description: "Perform your regular attack.", cost: "050", isPassive: 0, isCM: 1, offense: 1, defense: 0, support: 0, companion: 0, ac: 0, dc: 0, skillChecks: 0, saves: 0, accuracy: 0, advantage: 0, disadvantage: 0, damage: 1, mitigation: 0, healing: 0, condition: 0, movement: 0, targeting: 0, companion1: 0, death: 0, initiative: 0, isSpecial: 0, secOnly: 0, exception: 0, three: 0, four: 0, half: 0 };
 var perk8 = { description: "Perform your regular heal on an ally.", cost: "050", isPassive: 0, isCM: 1, offense: 0, defense: 0, support: 1, companion: 0, ac: 0, dc: 0, skillChecks: 0, saves: 0, accuracy: 0, advantage: 0, disadvantage: 0, damage: 0, mitigation: 0, healing: 0, condition: 0, movement: 0, targeting: 0, companion1: 0, death: 0, initiative: 0, isSpecial: 0, secOnly: 0, exception: 0, three: 0, four: 0, half: 0 };
