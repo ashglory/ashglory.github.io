@@ -158,7 +158,7 @@ function loadBuilder() {
     document.getElementById("typetext").innerHTML = "You are building a " + $("#aType option:selected").text() + ". You may select up to three perks.";
   }
 
-  /* display perk explanatory text */
+  /* display perk cost text */
   document.getElementById("perkcost").innerHTML = "Your " + $("#aType option:selected").text() + " costs " + String(total).bold() + " dirham.";
 }
 
@@ -463,6 +463,20 @@ function copyPerk() {
     }
   }
 
+  if (document.getElementById("p1").classList.contains("special") || document.getElementById("p2").classList.contains("special") || document.getElementById("p3").classList.contains("special")) {
+  } else if (ability === "cm") {
+    document.getElementById("p1").style.display = "block";
+    document.getElementById("p2").style.display = "block";
+    document.getElementById("p3").style.display = "block";
+  } else if (ability === "passive") {
+    document.getElementById("p1").style.display = "block";
+    document.getElementById("p2").style.display = "block";
+    if (document.getElementById("p1").innerHTML === document.getElementById("p2").innerHTML) {
+      document.getElementById("p3").style.display = "block";
+    } else {
+    document.getElementById("p3").style.display = "none";
+  }}
+
   /* perk cost update */
   if (document.getElementById("p1").innerHTML === "PERK #1") {
     cost1 = 0;
@@ -496,6 +510,8 @@ function copyPerk() {
   /* update cost */
   if (document.getElementById("p1").classList.contains("special") || document.getElementById("p2").classList.contains("special") || document.getElementById("p3").classList.contains("special")) {
     pCost = 0;
+  } else {
+    pCost = 200;
   }
     total = pCost + cost1 + cost2 + cost3;
   document.getElementById("perkcost").innerHTML = "Your " + $("#aType option:selected").text() + " costs " + String(total).bold() + " dirham.";

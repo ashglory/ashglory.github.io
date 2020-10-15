@@ -151,6 +151,11 @@ hr {
   display: inline;
 }
 
+.important {
+  color: #ff4845;
+  text-decoration: underline;
+}
+
 /* RESPONSIVENESS */
 @media only screen and (max-width: 360px) {
   body {
